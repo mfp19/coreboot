@@ -1,0 +1,22 @@
+427 === Region Section ===
+428 FLREG0   0x00000000
+429 FLREG1   0x07ff0500
+430 FLREG2   0x04ff0003
+431 FLREG3   0x00020001
+432 FLREG4   0x00000fff
+433 
+434 --- Details ---
+435 Region 0 (Descr.) 0x00000000 - 0x00000fff
+436 Region 1 (BIOS  ) 0x00500000 - 0x007fffff
+437 Region 2 (ME    ) 0x00003000 - 0x004fffff
+438 Region 3 (GbE   ) 0x00001000 - 0x00002fff
+439 Region 4 (Platf.) is unused.
+
+0x00000000:0x00000fff descr
+0x00500000:0x007fffff bios
+0x00003000:0x004fffff me
+0x00001000:0x00002fff gbe
+
+0x00000000:0x07ff0500 bios
+0x04ff0003:0x00020001 gbe
+

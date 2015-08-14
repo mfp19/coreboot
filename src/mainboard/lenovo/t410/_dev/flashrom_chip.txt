@@ -1,0 +1,494 @@
+$ sudo flashrom -r bios.bin -pinternal:laptop=force_I_want_a_brick > flashrom_chip.txt                                                              [23:06:34]
+
+========================================================================
+WARNING! You seem to be running flashrom on an unsupported laptop.
+Laptops, notebooks and netbooks are difficult to support and we
+recommend to use the vendor flashing utility. The embedded controller
+(EC) in these machines often interacts badly with flashing.
+See the manpage and http://www.flashrom.org/Laptops for details.
+
+If flash is shared with the EC, erase is guaranteed to brick your laptop
+and write may brick your laptop.
+Read and probe may irritate your EC and cause fan failure, backlight
+failure and sudden poweroff.
+You have been warned.
+========================================================================
+Proceeding anyway because user forced us to.
+Warning: SPI Configuration Lockdown activated.
+FREG0: Warning: Flash Descriptor region (0x00000000-0x00000fff) is read-only.
+FREG2: Warning: Management Engine region (0x00003000-0x004fffff) is locked.
+Not all flash regions are freely accessible by flashrom. This is most likely
+due to an active ME. Please see http://flashrom.org/ME for details.
+PR0: Warning: 0x007d0000-0x01ffffff is read-only.
+
+flashrom v0.9.8-unknown on Linux 3.13.0-61-generic (x86_64)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+Calibrating delay loop... OK.
+Found chipset "Intel QM57".
+Enabling flash write... Writes have been disabled for safety reasons. You can enforce write
+support with the ich_spi_force programmer option, but you will most likely
+harm your hardware! If you force flashrom you will get no support if
+something breaks. On a few mainboards it is possible to enable write
+access by setting a jumper (see its documentation or the board itself).
+OK.
+Found Macronix flash chip "MX25L6405" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+Found Macronix flash chip "MX25L6405D" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+Found Macronix flash chip "MX25L6406E/MX25L6408E" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+Found Macronix flash chip "MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+Multiple flash chip definitions match the detected chip(s): "MX25L6405", "MX25L6405D", "MX25L6406E/MX25L6408E", "MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E"
+Please specify which chip definition to use with the -c <chipname> option.
+
+$ sudo flashrom -V -p internal:laptop=force_I_want_a_brick -VVV -c "MX25L6405D" -r t410.bin                                                         [23:12:03]
+flashrom v0.9.8-unknown on Linux 3.13.0-61-generic (x86_64)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+flashrom was built with libpci 3.2.1, GCC 4.8.4, little endian
+Command line (8 args): flashrom -V -p internal:laptop=force_I_want_a_brick -VVV -c MX25L6405D -r t410.bin
+Calibrating delay loop... OS timer resolution is 1 usecs, 597M loops per second, 10 myus = 10 us, 100 myus = 100 us, 1000 myus = 998 us, 10000 myus = 9993 us, 4 myus = 4 us, OK.
+Initializing internal programmer
+No coreboot table found.
+Using Internal DMI decoder.
+page_size=1000
+pre-rounding:  start=0x00000000000f0000, len=0x10000, end=0x0000000000100000
+post-rounding: start=0x00000000000f0000, len=0x10000, end=0x0000000000100000
+page_size=1000
+pre-rounding:  start=0x00000000000e0010, len=0xb2d, end=0x00000000000e0b3d
+post-rounding: start=0x00000000000e0000, len=0x1000, end=0x00000000000e1000
+DMI string chassis-type: "Notebook"
+page_size=1000
+pre-rounding:  start=0x00007f19c1efa010, len=0xb2d, end=0x00007f19c1efab3d
+post-rounding: start=0x00007f19c1efa000, len=0x1000, end=0x00007f19c1efb000
+page_size=1000
+pre-rounding:  start=0x00007f19c1efb000, len=0x10000, end=0x00007f19c1f0b000
+post-rounding: start=0x00007f19c1efb000, len=0x10000, end=0x00007f19c1f0b000
+Laptop detected via DMI.
+DMI string system-manufacturer: "LENOVO"
+DMI string system-product-name: "2522CTO"
+DMI string system-version: "ThinkPad T410"
+DMI string baseboard-manufacturer: "LENOVO"
+DMI string baseboard-product-name: "2522CTO"
+DMI string baseboard-version: "Not Available"
+matching LENOVO against ^Lenovo X201
+matching 2522CTO against ^Lenovo X201
+matching ThinkPad T410 against ^Lenovo X201
+matching LENOVO against ^Lenovo X201
+matching 2522CTO against ^Lenovo X201
+matching Not Available against ^Lenovo X201
+========================================================================
+WARNING! You seem to be running flashrom on an unsupported laptop.
+Laptops, notebooks and netbooks are difficult to support and we
+recommend to use the vendor flashing utility. The embedded controller
+(EC) in these machines often interacts badly with flashing.
+See the manpage and http://www.flashrom.org/Laptops for details.
+
+If flash is shared with the EC, erase is guaranteed to brick your laptop
+and write may brick your laptop.
+Read and probe may irritate your EC and cause fan failure, backlight
+failure and sudden poweroff.
+You have been warned.
+========================================================================
+Proceeding anyway because user forced us to.
+Found chipset "Intel QM57" with PCI ID 8086:3b07.
+Enabling flash write... Root Complex Register Block address = 0xfed1c000
+page_size=1000
+pre-rounding:  start=0x00000000fed1c000, len=0x4000, end=0x00000000fed20000
+post-rounding: start=0x00000000fed1c000, len=0x4000, end=0x00000000fed20000
+GCS = 0xc61: BIOS Interface Lock-Down: enabled, Boot BIOS Straps: 0x3 (SPI)
+Top Swap: not enabled
+0xfff80000/0xffb80000 FWH IDSEL: 0x0
+0xfff00000/0xffb00000 FWH IDSEL: 0x0
+0xffe80000/0xffa80000 FWH IDSEL: 0x0
+0xffe00000/0xffa00000 FWH IDSEL: 0x0
+0xffd80000/0xff980000 FWH IDSEL: 0x0
+0xffd00000/0xff900000 FWH IDSEL: 0x0
+0xffc80000/0xff880000 FWH IDSEL: 0x0
+0xffc00000/0xff800000 FWH IDSEL: 0x0
+0xff700000/0xff300000 FWH IDSEL: 0x4
+0xff600000/0xff200000 FWH IDSEL: 0x5
+0xff500000/0xff100000 FWH IDSEL: 0x6
+0xff400000/0xff000000 FWH IDSEL: 0x7
+0xfff80000/0xffb80000 FWH decode enabled
+0xfff00000/0xffb00000 FWH decode enabled
+0xffe80000/0xffa80000 FWH decode enabled
+0xffe00000/0xffa00000 FWH decode enabled
+0xffd80000/0xff980000 FWH decode enabled
+0xffd00000/0xff900000 FWH decode enabled
+0xffc80000/0xff880000 FWH decode enabled
+0xffc00000/0xff800000 FWH decode enabled
+0xff700000/0xff300000 FWH decode enabled
+0xff600000/0xff200000 FWH decode enabled
+0xff500000/0xff100000 FWH decode enabled
+0xff400000/0xff000000 FWH decode enabled
+Maximum FWH chip size: 0x400000 bytes
+SPI Read Configuration: prefetching disabled, caching enabled, 
+BIOS_CNTL = 0x01: BIOS Lock Enable: disabled, BIOS Write Enable: enabled
+SPIBAR = 0x00007f19c1f07000 + 0x3800
+0x04: 0xe008 (HSFS)
+HSFS: FDONE=0, FCERR=0, AEL=0, BERASE=1, SCIP=0, FDOPSS=1, FDV=1, FLOCKDN=1
+Warning: SPI Configuration Lockdown activated.
+Reading OPCODES... done
+        OP        Type      Pre-OP
+	op[0]: 0x02, write w/  addr, none
+	op[1]: 0x03, read  w/  addr, none
+	op[2]: 0x20, write w/  addr, none
+	op[3]: 0x05, read  w/o addr, none
+	op[4]: 0x9f, read  w/o addr, none
+	op[5]: 0x20, write w/o addr, none
+	op[6]: 0x01, write w/o addr, none
+	op[7]: 0x06, read  w/o addr, none
+	Pre-OP 0: 0x06, Pre-OP 1: 0x50
+	0x06: 0x3f04 (HSFC)
+	HSFC: FGO=0, FCYCLE=2, FDBC=63, SME=0
+	0x08: 0x00000000 (FADDR)
+	0x50: 0x00000a0b (FRAP)
+	BMWAG 0x00, BMRAG 0x00, BRWA 0x0a, BRRA 0x0b
+	0x54: 0x00000000 FREG0: Warning: Flash Descriptor region (0x00000000-0x00000fff) is read-only.
+	0x58: 0x07ff0500 FREG1: BIOS region (0x00500000-0x007fffff) is read-write.
+	0x5C: 0x04ff0003 FREG2: Warning: Management Engine region (0x00003000-0x004fffff) is locked.
+	0x60: 0x00020001 FREG3: Gigabit Ethernet region (0x00001000-0x00002fff) is read-write.
+	0x64: 0x00000fff FREG4: Platform Data region is unused.
+	Not all flash regions are freely accessible by flashrom. This is most likely
+	due to an active ME. Please see http://flashrom.org/ME for details.
+	0x74: 0x9fff07d0 PR0: Warning: 0x007d0000-0x01ffffff is read-only.
+	0x78: 0x00000000 (PR1 is unused)
+	0x7C: 0x00000000 (PR2 is unused)
+	0x80: 0x00000000 (PR3 is unused)
+	0x84: 0x00000000 (PR4 is unused)
+	Writes have been disabled for safety reasons. You can enforce write
+	support with the ich_spi_force programmer option, but you will most likely
+	harm your hardware! If you force flashrom you will get no support if
+	something breaks. On a few mainboards it is possible to enable write
+	access by setting a jumper (see its documentation or the board itself).
+	0x90: 0x04 (SSFS)
+	SSFS: SCIP=0, FDONE=1, FCERR=0, AEL=0
+	0x91: 0xf84240 (SSFC)
+	SSFC: SCGO=0, ACS=0, SPOP=0, COP=4, DBC=2, SME=0, SCF=0
+	0x94: 0x5006     (PREOP)
+	0x96: 0x143b     (OPTYPE)
+	0x98: 0x05200302 (OPMENU)
+	0x9C: 0x0601209f (OPMENU+4)
+	0xA0: 0x00000000 (BBAR)
+	0xC4: 0x00802005 (LVSCC)
+	LVSCC: BES=0x1, WG=1, WSR=0, WEWS=0, EO=0x20, VCL=1
+	0xC8: 0x00002005 (UVSCC)
+	UVSCC: BES=0x1, WG=1, WSR=0, WEWS=0, EO=0x20
+	0xD0: 0x00000000 (FPB)
+	Reading flash descriptors mapped by the chipset via FDOC/FDOD... done.
+	=== Content Section ===
+	FLVALSIG 0x0ff0a55a
+	FLMAP0   0x03040002
+	FLMAP1   0x10100206
+	FLMAP2   0x00000020
+
+	--- Details ---
+	NR          (Number of Regions):                     4
+	FRBA        (Flash Region Base Address):         0x040
+	NC          (Number of Components):                  1
+	FCBA        (Flash Component Base Address):      0x020
+	ISL         (ICH/PCH Strap Length):                 16
+	FISBA/FPSBA (Flash ICH/PCH Strap Base Address):  0x100
+	NM          (Number of Masters):                     3
+	FMBA        (Flash Master Base Address):         0x060
+	MSL/PSL     (MCH/PROC Strap Length):                 0
+	FMSBA       (Flash MCH/PROC Strap Base Address): 0x200
+
+	=== Component Section ===
+	FLCOMP   0x0990001c
+	FLILL    0x00000000
+
+	--- Details ---
+	Component 1 density:            8 MB
+	Component 2 is not used.
+	Read Clock Frequency:           20 MHz
+	Read ID and Status Clock Freq.: 33 MHz
+	Write and Erase Clock Freq.:    33 MHz
+	Fast Read is supported.
+	Fast Read Clock Frequency:      50 MHz
+	No forbidden opcodes.
+
+	=== Region Section ===
+	FLREG0   0x00000000
+	FLREG1   0x07ff0500
+	FLREG2   0x04ff0003
+	FLREG3   0x00020001
+	FLREG4   0x00000fff
+
+	--- Details ---
+	Region 0 (Descr.) 0x00000000 - 0x00000fff
+	Region 1 (BIOS  ) 0x00500000 - 0x007fffff
+	Region 2 (ME    ) 0x00003000 - 0x004fffff
+	Region 3 (GbE   ) 0x00001000 - 0x00002fff
+	Region 4 (Platf.) is unused.
+
+	=== Master Section ===
+	FLMSTR1  0x0a0b0000
+	FLMSTR2  0x0c0d0000
+	FLMSTR3  0x08080118
+
+	--- Details ---
+	      Descr. BIOS ME GbE Platf.
+	      BIOS    r     rw      rw     
+	      ME      r         rw  rw     
+	      GbE                   rw     
+
+	      checking for opcode 0x03
+	      checking for opcode 0x05
+	      OK.
+	      The following protocols are supported: FWH, SPI.
+	      Probing for Macronix MX25L6405D, 8192 kB: page_size=1000
+	      pre-rounding:  start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+	      post-rounding: start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+	      programmer_map_flash_region: mapping MX25L6405D from 0x00000000ff800000 to 0x00007f19c06d5000
+	      RDID returned 0xc2 0x20 0x17. probe_spi_rdid_generic: id1 0xc2, id2 0x2017
+	      Found Macronix flash chip "MX25L6405D" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+	      Chip status register is 0x00.
+	      Chip status register: Status Register Write Disable (SRWD, SRP, ...) is not set
+	      Chip status register: Bit 6 is not set
+	      Chip status register: Block Protect 3 (BP3) is not set
+	      Chip status register: Block Protect 2 (BP2) is not set
+	      Chip status register: Block Protect 1 (BP1) is not set
+	      Chip status register: Block Protect 0 (BP0) is not set
+	      Chip status register: Write Enable Latch (WEL) is not set
+	      Chip status register: Write In Progress (WIP/BUSY) is not set
+	      page_size=1000
+	      pre-rounding:  start=0x00007f19c06d5000, len=0x800000, end=0x00007f19c0ed5000
+	      post-rounding: start=0x00007f19c06d5000, len=0x800000, end=0x00007f19c0ed5000
+	      programmer_unmap_flash_region: unmapped 0x00007f19c06d5000
+	      This chip may contain one-time programmable memory. flashrom cannot read
+	      and may never be able to write it, hence it may not be able to completely
+	      clone the contents of this chip (see man page for details).
+	      page_size=1000
+	      pre-rounding:  start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+	      post-rounding: start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+	      programmer_map_flash_region: mapping MX25L6405D from 0x00000000ff800000 to 0x00007f19c06d5000
+	      Block protection is disabled.
+	      Reading flash... Transaction error!
+	      SSFS: SCIP=0, FDONE=1, FCERR=1, AEL=0
+	      SSFC: SCGO=0, ACS=0, SPOP=0, COP=1, DBC=63, SME=0, SCF=0
+	      Running OPCODE 0x03 failed at address 0x003000 (payload length was 64).
+	      Read operation failed!
+	      FAILED.
+	      page_size=1000
+	      pre-rounding:  start=0x00007f19c06d5000, len=0x800000, end=0x00007f19c0ed5000
+	      post-rounding: start=0x00007f19c06d5000, len=0x800000, end=0x00007f19c0ed5000
+	      programmer_unmap_flash_region: unmapped 0x00007f19c06d5000
+	      Restoring MMIO space at 0x7f19c1f0a8a0
+	      Restoring PCI config space for 00:1f:0 reg 0xdc
+
+$ sudo flashrom -VVVV -p internal:laptop=force_I_want_a_brick -c "MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E" -r t410.bin
+
+flashrom v0.9.8-unknown on Linux 3.13.0-61-generic (x86_64)
+flashrom is free software, get the source code at http://www.flashrom.org
+
+flashrom was built with libpci 3.2.1, GCC 4.8.4, little endian
+Command line (8 args): flashrom -V -p internal:laptop=force_I_want_a_brick -VVV -c MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E -r t410.bin
+Calibrating delay loop... OS timer resolution is 1 usecs, 594M loops per second, 10 myus = 10 us, 100 myus = 99 us, 1000 myus = 992 us, 10000 myus = 9982 us, 4 myus = 4 us, OK.
+Initializing internal programmer
+No coreboot table found.
+Using Internal DMI decoder.
+page_size=1000
+pre-rounding:  start=0x00000000000f0000, len=0x10000, end=0x0000000000100000
+post-rounding: start=0x00000000000f0000, len=0x10000, end=0x0000000000100000
+page_size=1000
+pre-rounding:  start=0x00000000000e0010, len=0xb2d, end=0x00000000000e0b3d
+post-rounding: start=0x00000000000e0000, len=0x1000, end=0x00000000000e1000
+DMI string chassis-type: "Notebook"
+page_size=1000
+pre-rounding:  start=0x00007f01e20cc010, len=0xb2d, end=0x00007f01e20ccb3d
+post-rounding: start=0x00007f01e20cc000, len=0x1000, end=0x00007f01e20cd000
+page_size=1000
+pre-rounding:  start=0x00007f01e20cd000, len=0x10000, end=0x00007f01e20dd000
+post-rounding: start=0x00007f01e20cd000, len=0x10000, end=0x00007f01e20dd000
+Laptop detected via DMI.
+DMI string system-manufacturer: "LENOVO"
+DMI string system-product-name: "2522CTO"
+DMI string system-version: "ThinkPad T410"
+DMI string baseboard-manufacturer: "LENOVO"
+DMI string baseboard-product-name: "2522CTO"
+DMI string baseboard-version: "Not Available"
+matching LENOVO against ^Lenovo X201
+matching 2522CTO against ^Lenovo X201
+matching ThinkPad T410 against ^Lenovo X201
+matching LENOVO against ^Lenovo X201
+matching 2522CTO against ^Lenovo X201
+matching Not Available against ^Lenovo X201
+Found chipset "Intel QM57" with PCI ID 8086:3b07.
+Enabling flash write... Root Complex Register Block address = 0xfed1c000
+page_size=1000
+pre-rounding:  start=0x00000000fed1c000, len=0x4000, end=0x00000000fed20000
+post-rounding: start=0x00000000fed1c000, len=0x4000, end=0x00000000fed20000
+GCS = 0xc61: BIOS Interface Lock-Down: enabled, Boot BIOS Straps: 0x3 (SPI)
+Top Swap: not enabled
+0xfff80000/0xffb80000 FWH IDSEL: 0x0
+0xfff00000/0xffb00000 FWH IDSEL: 0x0
+0xffe80000/0xffa80000 FWH IDSEL: 0x0
+0xffe00000/0xffa00000 FWH IDSEL: 0x0
+0xffd80000/0xff980000 FWH IDSEL: 0x0
+0xffd00000/0xff900000 FWH IDSEL: 0x0
+0xffc80000/0xff880000 FWH IDSEL: 0x0
+0xffc00000/0xff800000 FWH IDSEL: 0x0
+0xff700000/0xff300000 FWH IDSEL: 0x4
+0xff600000/0xff200000 FWH IDSEL: 0x5
+0xff500000/0xff100000 FWH IDSEL: 0x6
+0xff400000/0xff000000 FWH IDSEL: 0x7
+0xfff80000/0xffb80000 FWH decode enabled
+0xfff00000/0xffb00000 FWH decode enabled
+0xffe80000/0xffa80000 FWH decode enabled
+0xffe00000/0xffa00000 FWH decode enabled
+0xffd80000/0xff980000 FWH decode enabled
+0xffd00000/0xff900000 FWH decode enabled
+0xffc80000/0xff880000 FWH decode enabled
+0xffc00000/0xff800000 FWH decode enabled
+0xff700000/0xff300000 FWH decode enabled
+0xff600000/0xff200000 FWH decode enabled
+0xff500000/0xff100000 FWH decode enabled
+0xff400000/0xff000000 FWH decode enabled
+Maximum FWH chip size: 0x400000 bytes
+SPI Read Configuration: prefetching disabled, caching enabled, 
+BIOS_CNTL = 0x01: BIOS Lock Enable: disabled, BIOS Write Enable: enabled
+SPIBAR = 0x00007f01e20d9000 + 0x3800
+0x04: 0xe008 (HSFS)
+HSFS: FDONE=0, FCERR=0, AEL=0, BERASE=1, SCIP=0, FDOPSS=1, FDV=1, FLOCKDN=1
+Reading OPCODES... done
+        OP        Type      Pre-OP
+op[0]: 0x02, write w/  addr, none
+op[1]: 0x03, read  w/  addr, none
+op[2]: 0x20, write w/  addr, none
+op[3]: 0x05, read  w/o addr, none
+op[4]: 0x9f, read  w/o addr, none
+op[5]: 0x20, write w/o addr, none
+op[6]: 0x01, write w/o addr, none
+op[7]: 0x06, read  w/o addr, none
+Pre-OP 0: 0x06, Pre-OP 1: 0x50
+0x06: 0x3f04 (HSFC)
+HSFC: FGO=0, FCYCLE=2, FDBC=63, SME=0
+0x08: 0x00003000 (FADDR)
+0x50: 0x00000a0b (FRAP)
+BMWAG 0x00, BMRAG 0x00, BRWA 0x0a, BRRA 0x0b
+0x54: 0x00000000 0x58: 0x07ff0500 FREG1: BIOS region (0x00500000-0x007fffff) is read-write.
+0x5C: 0x04ff0003 0x60: 0x00020001 FREG3: Gigabit Ethernet region (0x00001000-0x00002fff) is read-write.
+0x64: 0x00000fff FREG4: Platform Data region is unused.
+0x74: 0x9fff07d0 0x78: 0x00000000 (PR1 is unused)
+0x7C: 0x00000000 (PR2 is unused)
+0x80: 0x00000000 (PR3 is unused)
+0x84: 0x00000000 (PR4 is unused)
+Writes have been disabled for safety reasons. You can enforce write
+support with the ich_spi_force programmer option, but you will most likely
+harm your hardware! If you force flashrom you will get no support if
+something breaks. On a few mainboards it is possible to enable write
+access by setting a jumper (see its documentation or the board itself).
+0x90: 0x04 (SSFS)
+SSFS: SCIP=0, FDONE=1, FCERR=0, AEL=0
+0x91: 0xf80000 (SSFC)
+SSFC: SCGO=0, ACS=0, SPOP=0, COP=0, DBC=0, SME=0, SCF=0
+0x94: 0x5006     (PREOP)
+0x96: 0x143b     (OPTYPE)
+0x98: 0x05200302 (OPMENU)
+0x9C: 0x0601209f (OPMENU+4)
+0xA0: 0x00000000 (BBAR)
+0xC4: 0x00802005 (LVSCC)
+LVSCC: BES=0x1, WG=1, WSR=0, WEWS=0, EO=0x20, VCL=1
+0xC8: 0x00002005 (UVSCC)
+UVSCC: BES=0x1, WG=1, WSR=0, WEWS=0, EO=0x20
+0xD0: 0x00000000 (FPB)
+Reading flash descriptors mapped by the chipset via FDOC/FDOD... done.
+=== Content Section ===
+FLVALSIG 0x0ff0a55a
+FLMAP0   0x03040002
+FLMAP1   0x10100206
+FLMAP2   0x00000020
+
+--- Details ---
+NR          (Number of Regions):                     4
+FRBA        (Flash Region Base Address):         0x040
+NC          (Number of Components):                  1
+FCBA        (Flash Component Base Address):      0x020
+ISL         (ICH/PCH Strap Length):                 16
+FISBA/FPSBA (Flash ICH/PCH Strap Base Address):  0x100
+NM          (Number of Masters):                     3
+FMBA        (Flash Master Base Address):         0x060
+MSL/PSL     (MCH/PROC Strap Length):                 0
+FMSBA       (Flash MCH/PROC Strap Base Address): 0x200
+
+=== Component Section ===
+FLCOMP   0x0990001c
+FLILL    0x00000000
+
+--- Details ---
+Component 1 density:            8 MB
+Component 2 is not used.
+Read Clock Frequency:           20 MHz
+Read ID and Status Clock Freq.: 33 MHz
+Write and Erase Clock Freq.:    33 MHz
+Fast Read is supported.
+Fast Read Clock Frequency:      50 MHz
+No forbidden opcodes.
+
+=== Region Section ===
+FLREG0   0x00000000
+FLREG1   0x07ff0500
+FLREG2   0x04ff0003
+FLREG3   0x00020001
+FLREG4   0x00000fff
+
+--- Details ---
+Region 0 (Descr.) 0x00000000 - 0x00000fff
+Region 1 (BIOS  ) 0x00500000 - 0x007fffff
+Region 2 (ME    ) 0x00003000 - 0x004fffff
+Region 3 (GbE   ) 0x00001000 - 0x00002fff
+Region 4 (Platf.) is unused.
+
+=== Master Section ===
+FLMSTR1  0x0a0b0000
+FLMSTR2  0x0c0d0000
+FLMSTR3  0x08080118
+
+--- Details ---
+      Descr. BIOS ME GbE Platf.
+BIOS    r     rw      rw     
+ME      r         rw  rw     
+GbE                   rw     
+
+checking for opcode 0x03
+checking for opcode 0x05
+OK.
+The following protocols are supported: FWH, SPI.
+Probing for Macronix MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E, 8192 kB: page_size=1000
+pre-rounding:  start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+post-rounding: start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+programmer_map_flash_region: mapping MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E from 0x00000000ff800000 to 0x00007f01e08a7000
+RDID returned 0xc2 0x20 0x17. probe_spi_rdid_generic: id1 0xc2, id2 0x2017
+Found Macronix flash chip "MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E" (8192 kB, SPI) mapped at physical address 0x00000000ff800000.
+Chip status register is 0x00.
+Chip status register: Status Register Write Disable (SRWD, SRP, ...) is not set
+Chip status register: Bit 6 is not set
+Chip status register: Block Protect 3 (BP3) is not set
+Chip status register: Block Protect 2 (BP2) is not set
+Chip status register: Block Protect 1 (BP1) is not set
+Chip status register: Block Protect 0 (BP0) is not set
+Chip status register: Write Enable Latch (WEL) is not set
+Chip status register: Write In Progress (WIP/BUSY) is not set
+page_size=1000
+pre-rounding:  start=0x00007f01e08a7000, len=0x800000, end=0x00007f01e10a7000
+post-rounding: start=0x00007f01e08a7000, len=0x800000, end=0x00007f01e10a7000
+programmer_unmap_flash_region: unmapped 0x00007f01e08a7000
+This chip may contain one-time programmable memory. flashrom cannot read
+and may never be able to write it, hence it may not be able to completely
+clone the contents of this chip (see man page for details).
+page_size=1000
+pre-rounding:  start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+post-rounding: start=0x00000000ff800000, len=0x800000, end=0x0000000100000000
+programmer_map_flash_region: mapping MX25L6436E/MX25L6445E/MX25L6465E/MX25L6473E from 0x00000000ff800000 to 0x00007f01e08a7000
+Block protection is disabled.
+Reading flash... SSFS: SCIP=0, FDONE=1, FCERR=1, AEL=0
+SSFC: SCGO=0, ACS=0, SPOP=0, COP=1, DBC=63, SME=0, SCF=0
+Running OPCODE 0x03 failed at address 0x003000 (payload length was 64).
+FAILED.
+page_size=1000
+pre-rounding:  start=0x00007f01e08a7000, len=0x800000, end=0x00007f01e10a7000
+post-rounding: start=0x00007f01e08a7000, len=0x800000, end=0x00007f01e10a7000
+programmer_unmap_flash_region: unmapped 0x00007f01e08a7000
+Restoring MMIO space at 0x7f01e20dc8a0
+Restoring PCI config space for 00:1f:0 reg 0xdc
+

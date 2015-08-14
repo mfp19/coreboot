@@ -1,0 +1,1 @@
+@start .\winuptp.exe %1

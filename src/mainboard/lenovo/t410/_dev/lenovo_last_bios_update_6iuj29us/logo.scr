@@ -1,0 +1,5 @@
+BANKS -N:1 -S:256	# Flash accessed as one(1), 8192 KByte (64Mb) bank.
+COMPRESS  LZINT		# Use LZINT when compressing modules
+BOOTBLOCK -S:128	# (J) PSI style, no BB.BIN needed
+LOGO logo.bmp
+PSI -PLACE:"BOOTBLOCK" -ALIGN:TOP -COMPRESS:NO  ceimain.bin
